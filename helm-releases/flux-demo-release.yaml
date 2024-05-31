@@ -1,0 +1,14 @@
+apiVersion: helm.fluxcd.io/v1
+kind: HelmRelease
+metadata:
+  name: fluxcd
+  namespace: default
+  annotations:
+    fluxcd.io/automated: "true"
+spec:
+  releaseName: fluxcd
+  targetNamespace: fluxcd
+  chart:
+    git: git.url=git@github.com:MPFabio/Flux.git
+    path: helm-charts/fluxcd
+    ref: fluxcd
